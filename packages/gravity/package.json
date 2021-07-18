@@ -2,10 +2,11 @@
 	"name": "gravity",
 	"version": "1.0.0",
 	"description": "A Preact-based UI component library.",
-	"main": "src/index.js",
+	"main": "dist/gravity.es.js",
 	"scripts": {
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"build": "vite build",
+		"storybook": "BUILD_ENV=storybook start-storybook -p 6006",
+		"build-storybook": "BUILD_ENV=storybook build-storybook"
 	},
 	"keywords": [
 		"ui",
@@ -16,6 +17,11 @@
 	],
 	"author": "Jake Hamilton <jake.hamilton@hey.com>",
 	"license": "Apache-2.0",
+	"exports": {
+		"import": "./dist/gravity.es.js",
+		"require": "./dist/gravity.cjs.js",
+		"default": "./dist/gravity.umd.js"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.14.6",
 		"@storybook/addon-actions": "^6.4.0-alpha.18",
